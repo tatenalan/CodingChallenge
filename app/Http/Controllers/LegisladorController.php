@@ -76,13 +76,28 @@ class LegisladorController extends Controller
   } // cierre de metodo store
 
 
-  // Esta es la vista que ve el admin para editar o borrar Legisladores
-    public function editview(){
+    // Esta es la vista que ve el admin para editar o borrar Legisladores
+    public function editview()
+    {
 
       $legisladores = legislador::all();
       $partidos = partido::all();
       return view('adminpanel', compact('legisladores', 'partidos'));
 
     }
+
+
+    // Para eliminar un Legislador de la base de datos
+    public function eliminarlegislador(Request $request)
+    {
+      // Llamamos al legislador a eliminar mediante su id
+      $legislador = legislador::find($request->id);
+      // Lo eliminamos
+      $legislador->delete();
+      // Redirigimos
+      return redirect("/adminpanel");
+
+    }
+
 
 } // cierre del Controlador

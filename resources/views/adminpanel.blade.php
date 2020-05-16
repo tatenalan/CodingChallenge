@@ -19,16 +19,16 @@ Panel de administrador
 
         <ul class="uk-subnav uk-subnav-pill">
           <li class="uk-first-column" uk-filter-control="sort: date"><a href="#">Fin del Mandato Ascendente</a></li>
-          <li uk-filter-control="sort: date; order: desc" class="uk-active"><a href="#">Fin del Mandato Ascendente Descendente</a></li>
+          <li uk-filter-control="sort: date; order: desc" class="uk-active"><a href="#">Fin del Mandato Descendente</a></li>
         </ul>
 
       </div>
 
-      <div class="js-filter uk-child-width-1-2 uk-child-width-1-3@m my-5" uk-grid>
+      <div class="js-filter uk-child-width-1 uk-child-width-1-2@m uk-child-width-1-3@l my-5" uk-grid>
 
         @foreach ($legisladores as $legislador)
 
-          <div data-partido="{{$legislador->partido->nombre}}" date={{$legislador->inicioMandato}} class="uk-visible-toggle icons-product" tabindex="-1">
+          <div data-partido="{{$legislador->partido->nombre}}" date={{$legislador->inicioMandato}} class="{{--uk-visible-toggle--}} icons-product" tabindex="-1">
 
             <div class="uk-card uk-card-default uk-card-hover {{ $legislador->partido->nombre}}">
 
@@ -50,14 +50,21 @@ Panel de administrador
 
                 <div class="uk-card-footer">
                     <a href="#" class="uk-button uk-button-text">Partido: {{$legislador->partido->nombre}}</a>
+                    {{-- <input id="nombre" type="text" name="nombre" value="" placeholder="Ingrese su nombre" > --}}
+
 
                     <div class="uk-flex-center pt-3" uk-grid>
                       <div class="uk-width-auto">
                         <ul class="uk-invisible-hover uk-iconnav">
                           <li class="rounded-icon ico mx-1"><span uk-icon="icon: pencil"></li>
-                          <li class="rounded-icon ico mx-1"><span uk-icon="icon: trash"></li>
+                            <form class="" action="/eliminarlegislador" method="post">
+                              @csrf
+                              <input type="hidden" name="id" value="{{$legislador->id}}">
+                              <button type="submit"><li class="rounded-icon ico mx-1"><span uk-icon="icon: trash"></li></button>
+                            </form>
                         </ul>
                       </div>
+
 
                   </div>
 

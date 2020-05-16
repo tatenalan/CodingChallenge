@@ -19,6 +19,10 @@ Route::post('/AgregarLegislador', 'legisladorController@store'); // Funcion que 
 
 Route::get('/adminpanel', 'legisladorController@editview');
 
+Route::post('/adminpanel', 'legisladorController@editview');
+
+Route::post('/eliminarlegislador', 'LegisladorController@eliminarlegislador');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
