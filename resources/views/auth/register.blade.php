@@ -5,10 +5,10 @@ Registrarse
 @section('main')
 
 
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-8">
+    <div class="vh100 pt-5 bg2">
+        <div class="m-auto col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Registrarse') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
@@ -66,8 +66,8 @@ Registrarse
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                <button type="submit" class="form-submit">
+                                    {{ __('Registrarse') }}
                                 </button>
                             </div>
                         </div>

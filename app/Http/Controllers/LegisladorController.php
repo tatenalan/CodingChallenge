@@ -86,6 +86,61 @@ class LegisladorController extends Controller
 
     }
 
+    public function updatelegislador(Request $request)
+    {
+
+      // dd($request->all());
+
+      $reglas = [
+      'nombre' => 'required|string',
+      'apellido' => 'required|string',
+      'email' => 'required|email',
+      'direccion' => 'required|string',
+      'pais' => 'required|string',
+      'votos' => 'integer|required',
+      'partido_id' => 'string|required',
+      'inicioMandato' => 'date|required',
+      ];
+
+      $mensajes = [
+        "required" => "Todos los campos son requeridos",
+        "integer" => "El campo Votos debe ser un número entero",
+        "email" => "Email inválido",
+      ];
+
+      $this->validate($request, $reglas, $mensajes);
+
+      // Busco al legislador a editar
+      $legislador = legislador::find($request->id);
+
+      $legislador->nombre = $request->nombre;
+      $legislador->apellido = $request->apellido;
+      $legislador->email = $request->email;
+      $legislador->direccion = $request->direccion;
+      $legislador->pais = $request->pais;
+      $legislador->votos = $request->votos;
+      $legislador->partido_id = $request->partido_id;
+      $legislador->inicioMandato = $request->inicioMandato;
+
+      // creamos la variable date para guardar la fecha de inicio de mandato
+      $date = $request->inicioMandato;
+      // Lo pasamos a string to time
+      $date = strtotime($date);
+      // Le sumamos un año
+      $new_date = strtotime('+ 1 year', $date);
+      // Lo transformamos en formato date a nuestro gusto
+      $legislador->finMandato = Date('Y-m-d', $new_date);
+
+      // guardo el objeto Legislador instanciado en la base de datos
+        $legislador->save();
+
+
+    return redirect('/adminpanel')
+          ->with('status', 'Legislador editado correctamente')
+          ->with('operation', 'success');
+
+    } // cierre de metodo store
+
 
     // Para eliminar un Legislador de la base de datos
     public function eliminarlegislador(Request $request)
@@ -95,7 +150,9 @@ class LegisladorController extends Controller
       // Lo eliminamos
       $legislador->delete();
       // Redirigimos
-      return redirect("/adminpanel");
+      return redirect("/adminpanel")
+      >with('status', 'Legislador eliminado correctamente')
+      ->with('operation', 'success');
 
     }
 

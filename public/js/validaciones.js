@@ -21,7 +21,6 @@ window.addEventListener('load',function(){
   var inicioMandato = document.getElementById('inicioMandato');
   var finMandato = document.getElementById('finMandato');
   var expresion = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // Generamos una expresion para que el email pueda ser valido
-
   // Declaro las variables de error
 
   var nombre_error = document.getElementById('nombre_error');

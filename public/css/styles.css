@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
-  text-decoration: none!important;
+  text-decoration: none;
   scroll-behavior: smooth;
 }
 
@@ -26,8 +26,6 @@ form {
 .container {
   margin-top: 50px;
   padding: 40px;
-  background-color: #fafafa;
-  box-shadow: 0 0 3px 0px black;
 }
 
 /* Notificaciones */
@@ -36,7 +34,11 @@ form {
   bottom: 15px;
   right: 15px;
   z-index: 1000;
-  background-color: #F76D6D;
+  background-image: -moz-linear-gradient(to left, #74ebd5, #9face6);
+  background-image: -ms-linear-gradient(to left, #74ebd5, #9face6);
+  background-image: -o-linear-gradient(to left, #74ebd5, #9face6);
+  background-image: -webkit-linear-gradient(to left, #74ebd5, #9face6);
+  background-image: linear-gradient(to left, #74ebd5, #9face6);
   color: white;
   border: none;
 }
@@ -92,14 +94,40 @@ form {
 }
 
 /* Sacarle el formato al button de bootstrap  https://stackoverflow.com/questions/2460100/remove-the-complete-styling-of-an-html-button-submit*/
-button, input {
+button.edit, input.edit, select.edit {
   outline: none !important;
   border: none!important;
-  background-color: none;
+  background-color: none!important;
   background: none;
 	color: inherit;
 	padding: 0;
-	font: inherit;
 	cursor: pointer;
 	outline: inherit;
+}
+
+option {
+  color: black;
+}
+
+.vh100 {
+  height: 100vh;
+}
+
+.uk-card {
+  border-radius: 10px;
+}
+
+.uk-card-body input {
+  width: 100%;
+  text-align: center;
+}
+
+.uk-card-body label {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.input-nombre {
+  font-size: 24px;
+  font-weight: bold;
 }

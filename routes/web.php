@@ -21,6 +21,8 @@ Route::get('/adminpanel', 'legisladorController@editview');
 
 Route::post('/adminpanel', 'legisladorController@editview');
 
+Route::put('/updatelegislador', 'legisladorController@updatelegislador');
+
 Route::post('/eliminarlegislador', 'LegisladorController@eliminarlegislador');
 
 Auth::routes();

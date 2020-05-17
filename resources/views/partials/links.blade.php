@@ -6,3 +6,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
 <!-- Mi cssUIkit -->
 <link rel="stylesheet" href="/css/uikit.css">
+<!-- Font Icon -->
+<link rel="stylesheet" href="/fonts/material-icon/css/material-design-iconic-font.min.css">
+<!-- Main css -->
+<link rel="stylesheet" href="/css/form.css">

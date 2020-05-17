@@ -4,12 +4,13 @@ Registrar Legislador
 @endsection
 @section('main')
 
+    <div class="bg1">
 
-      <div class="container">
+      <div class="container signup-content">
 
         <h2 class="text-center mb-5">Crear Legislador</h2>
 
-        <form id="form" class="" action="/AgregarLegislador" method="post">
+        <form id="form" class="" action="/AgregarLegislador" method="post" enctype="multipart/form-data">
           @csrf
 
           <div class="row">
@@ -128,12 +129,18 @@ Registrar Legislador
           <small id="Help" class="form-text text-muted">Los campos con un * son opcionales</small>
 
         <div class="text-center mt-3">
-          <button id="submit" type="submit" class="btn btn-info">REGISTRAR LEGISLADOR</button>
+          <button id="submit" type="submit" class="form-submit">REGISTRAR LEGISLADOR</button>
         </div>
 
 
         </form>
 
       </div>
+
+  </div>
+
+      <!-- JS -->
+    <script src="/vendor/jquery/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
 
 @endsection
