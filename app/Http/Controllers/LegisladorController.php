@@ -151,7 +151,7 @@ class LegisladorController extends Controller
       $legislador->delete();
       // Redirigimos
       return redirect("/adminpanel")
-      >with('status', 'Legislador eliminado correctamente')
+      ->with('status', 'Legislador eliminado correctamente')
       ->with('operation', 'success');
 
     }

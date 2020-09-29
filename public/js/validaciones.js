@@ -35,7 +35,7 @@ window.addEventListener('load',function(){
 
 
     // Al sacar el focus del input Fecha de Inicio de Mandato
-    inicioMandato.addEventListener ('blur' , function(e){
+    inicioMandato.addEventListener ('change' , function(e){
       // Obtenemos el valor de la fecha elegida
       var fechaInicio = document.getElementById('inicioMandato').value;
       // Seleccionamos los digitos correspondientes al año
